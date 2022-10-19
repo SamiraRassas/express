@@ -1,0 +1,21 @@
+  [  {
+        "name":"Samira Rassas",
+        "courses": ["Math","FullStack"],
+        "operation": "Register"
+    },
+    {
+        "name":"Rinad Jumaa",
+        "courses": ["Math","Arabic"],
+        "operation": "unRegister"
+    },
+{
+    "name":"Sandra Murad",
+    "courses": ["Arabic","FullStack"],
+    "operation": "Register"
+},
+{
+    "name":"Nadine Abu Omar",
+    "courses": ["Arabic","FullStack"],
+    "operation": "Register"
+}
+  ]

@@ -8,7 +8,7 @@ server.get('/index.html', (req, res) => {
 
 server.get("/students", (req, res) => {
   if (!req.query.name) {
-    res.status(404).send("Name is not given");
+    res.status(404).send("Name is not given!");
   } else {
     let data = fs.readFileSync("students.json");
     let student = JSON.parse(data);

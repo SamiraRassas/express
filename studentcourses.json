@@ -1,0 +1,33 @@
+[  {
+    "studentid":"1",
+    "courseid": "1"
+},
+{
+    "studentid":"1",
+    "courseid": "3"
+},
+{
+    "studentid":"2",
+    "courseid": "1"
+},
+{
+    "studentid":"2",
+    "courseid": "2"
+},
+{
+    "studentid":"3",
+    "courseid": "2"
+},
+{
+    "studentid":"3",
+    "courseid": "3"
+},
+{
+    "studentid":"4",
+    "courseid": "2"
+},
+{
+    "studentid":"4",
+    "courseid": "3"
+}
+]

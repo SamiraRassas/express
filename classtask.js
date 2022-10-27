@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 let data = fs.readFileSync("students.json");
 let student = JSON.parse(data);
 var jsonParser = bodyParser.json();
-const cors = require('cors');
+const cors = require("cors");
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 server.use(cors());
@@ -29,10 +29,8 @@ server.use((error, req, res, next) => {
   }
   res.status(error.console || 500);
   res.json({ message: error.message || "An error has occured!" });
-
   //   console.log( `error ${message}`) // log the error
   //  status = status || 500
-  //   // send back an easily understandable error message to the caller
   //   response.status(status).send(message);
 });
 
@@ -47,16 +45,17 @@ server.get("/students", (req, res) => {
       res
         .status(404)
         .send("the user with id " + req.query.id + " record was not found");
-        res.set({
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Credentials" : true
+      res.set({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true,
       });
     } else {
       res.status(200).send(result);
     }
   }
 });
+
 
 server.get("/student/courses", (req, res) => {
   if (!req.query.id) {
@@ -115,26 +114,24 @@ server.delete("/student/:id", (req, res, next) => {
   });
 });
 
-server.put("/student/:id",urlencodedParser, (req, res) => {
+server.put("/student/:id", jsonParser, (req, res) => {
   var existAccounts = getAccountData();
   fs.readFile(
     dataPath,
     "utf8",
     (err, data) => {
       const userId = req.params["id"];
-      console.log("user" + userId);
       if (!userId) {
         next("user ID is not given!", 404);
       } else {
         response = {
           name: req.body.name,
           operation: req.body.operation,
+          email: req.body.email,
         };
-        // console.log(req.body.name);
-        existAccounts[userId] = JSON.stringify(response);
-        console.log(">>>>"+response);
+        existAccounts[userId] = response;
+        console.log(">>>>" + JSON.stringify(response));
         saveAccountData(existAccounts);
-
         res.send(`accounts with id ${userId} has been updated`);
       }
     },

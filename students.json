@@ -1,21 +1,25 @@
   [  {
         "name":"Samira Rassas",
         "operation": "Register",
+        "email": "samira@gmail.com",
         "id":"1"
     },
     {
         "name":"Rinad Jumaa",
         "operation": "unRegister",
+        "email": "rinad@gmail.com",
         "id":"2"
     },
 {
     "name":"Sandra Murad",
     "operation": "Register",
+    "email": "sandra@gmail.com",
     "id":"3"
 },
 {
     "name":"Nadine Abu Omar",
     "operation": "Register",
+    "email": "nadine@gmail.com",
     "id":"4"
 }
   ]
